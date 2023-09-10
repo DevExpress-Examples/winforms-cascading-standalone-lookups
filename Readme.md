@@ -3,17 +3,27 @@
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T380359)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
-<!-- default file list -->
-*Files to look at*:
+
+# WinForms LookupEdit - Filter a standalone lookup based on a value in another lookup
+
+This example demonstrates how to implement cascading lookups. When a user selects a category in the first lookup, the second lookup filters its items to display only products that match the selected category.
+
+Use the secondary lookup’s [CascadingOwner](https://docs.devexpress.com/WindowsForms/DevExpress.XtraEditors.LookUpEditBase.CascadingOwner) property to specify the primary lookup. Lookups use an internal algorithm that identifies a key field in a data source. The algorithm checks the names of data objects, the key attributes, and the data type of the primary keys. The algorithm is based on a common naming convention of key fields (for example, `ID`, `Key`, and `OID`).
+
+```csharp
+lookUpEdit2.CascadingOwner = lookUpEdit1;
+```
+
+> **Note**
+>
+> The `CascadingOwner` property is supported only for standalone lookup editors. Read the following help topic for information on how to create cascading in-place lookups: [Cascading Lookups](https://docs.devexpress.com/WindowsForms/116018/controls-and-libraries/editors-and-simple-controls/lookup-editors/cascading-lookups).
+
+
+## Files to Review
 
 * [Form1.cs](./CS/Lookup-Cascading/Form1.cs) (VB: [Form1.vb](./VB/Lookup-Cascading/Form1.vb))
-* [Program.cs](./CS/Lookup-Cascading/Program.cs) (VB: [Program.vb](./VB/Lookup-Cascading/Program.vb))
-<!-- default file list end -->
-# How to filter standalone LookUpEdit based on another LookUpEdit's value(CascadingOwner)
 
 
-This example demonstrates the use of the CascadingOwner property to perform automatic filtration of a LookUpEdit control's popup data source based on the value of another LookUpEdit control.<br>Note that the CascadingOwner property is supported only for standalone lookup editors.<br><br>To learn how to filter popup data sources of in-place lookup editors, see <a href="https://www.devexpress.com/Support/Center/p/E898">How to filter a second LookUp column based on a first LookUp column's value</a>.<br><br><strong>See Also:</strong><br><br><a href="https://www.devexpress.com/Support/Center/p/T371660">How to create cascading lookup editors </a>
+## Documentation
 
-<br/>
-
-
+* [Lookup Editors](https://docs.devexpress.com/WindowsForms/116008/controls-and-libraries/editors-and-simple-controls/lookup-editors)
